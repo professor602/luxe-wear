@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Log in to your LuxeWear demo account.">
+  <title>Log In – LuxeWear</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="login">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-card reveal">
+
+          <div class="auth-image" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80');">
+            <div class="auth-image-text">
+              <h2>Welcome back to LuxeWear</h2>
+              <p>Log in to view your profile, wishlist and orders.</p>
+            </div>
+          </div>
+
+          <div class="auth-form">
+            <h1>Log In</h1>
+            <p class="subtitle">Sign in to your demo account.</p>
+
+            <div class="alert alert-warning" role="note">
+              <strong>Demo only.</strong> This login is an academic demonstration. Passwords are stored
+              in your browser without protection, so never use a real password or personal data.
+              Real websites need a secure backend.
+            </div>
+
+            <div id="form-alert" class="alert hidden" role="alert"></div>
+
+            <form id="login-form" novalidate>
+              <div class="form-group">
+                <label for="login-email">Email address</label>
+                <input type="email" id="login-email" class="form-control" placeholder="name@example.com" autocomplete="username">
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="login-password" class="form-control" placeholder="Enter your password" autocomplete="current-password">
+                  <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-links">
+                <label class="checkbox-row" for="remember-me">
+                  <input type="checkbox" id="remember-me" checked> Remember me
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Log In</button>
+            </form>
+
+            <p class="auth-switch">
+              New to LuxeWear?
+              <a href="signup.html" class="link-gold" data-auth-switch="signup.html">Create an account</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

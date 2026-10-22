@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create a LuxeWear demo account.">
+  <title>Sign Up – LuxeWear</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="signup">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-card reveal">
+
+          <div class="auth-image" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=900&q=80');">
+            <div class="auth-image-text">
+              <h2>Join the LuxeWear community</h2>
+              <p>Create a demo account to save favourites and track demo orders.</p>
+            </div>
+          </div>
+
+          <div class="auth-form">
+            <h1>Create Account</h1>
+            <p class="subtitle">It only takes a minute.</p>
+
+            <div class="alert alert-warning" role="note">
+              <strong>Demo only.</strong> Do not enter a real password, payment details or sensitive
+              personal information. Use made-up details such as <em>Demo1234</em>.
+            </div>
+
+            <div id="form-alert" class="alert hidden" role="alert"></div>
+
+            <form id="signup-form" novalidate>
+              <div class="form-group">
+                <label for="signup-name">Full name</label>
+                <input type="text" id="signup-name" class="form-control" placeholder="Your name" maxlength="60" autocomplete="name">
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="signup-email">Email address</label>
+                <input type="email" id="signup-email" class="form-control" placeholder="name@example.com" autocomplete="email">
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="signup-password">Password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="signup-password" class="form-control" placeholder="At least 8 characters, letters and numbers" autocomplete="new-password">
+                  <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+                <p class="password-hint" id="password-hint" aria-live="polite"></p>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="signup-confirm">Confirm password</label>
+                <div class="input-wrapper">
+                  <input type="password" id="signup-confirm" class="form-control" placeholder="Re-enter your password" autocomplete="new-password">
+                  <button type="button" class="password-toggle" aria-label="Show password" aria-pressed="false">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+                <span class="form-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+            </form>
+
+            <p class="auth-switch">
+              Already have an account?
+              <a href="login.html" class="link-gold" data-auth-switch="login.html">Log in</a>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

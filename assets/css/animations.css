@@ -1,0 +1,99 @@
+/* =====================================================================
+   LuxeWear – animations.css
+   All motion lives here. animations.js adds the classes used below.
+   Every page <head> must contain this one-line script so that reveal
+   effects only hide content when JavaScript is actually running:
+   <script>document.documentElement.classList.add('js');</script>
+   ===================================================================== */
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeIn      { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fadeUp      { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideInLeft { from { opacity: 0; transform: translateX(-40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes slideInRight{ from { opacity: 0; transform: translateX(40px); }  to { opacity: 1; transform: translateX(0); } }
+@keyframes heroZoom    { from { transform: scale(1); } to { transform: scale(1.08); } }
+@keyframes cartBump    { 0% { transform: scale(1); } 40% { transform: scale(1.55); } 100% { transform: scale(1); } }
+@keyframes heartPop    { 0% { transform: scale(1); } 35% { transform: scale(1.4); } 65% { transform: scale(0.9); } 100% { transform: scale(1); } }
+@keyframes shimmer     { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@keyframes toastIn     { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toastOut    { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(40px); } }
+@keyframes popIn       { 0% { transform: scale(0); opacity: 0; } 70% { transform: scale(1.12); } 100% { transform: scale(1); opacity: 1; } }
+@keyframes shake       { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+@keyframes spin        { to { transform: rotate(360deg); } }
+@keyframes removeItem  { to { opacity: 0; transform: translateX(30px); height: 0; padding: 0; } }
+
+/* ---------- Hero ---------- */
+.hero-slide.active { animation: heroZoom 9s ease-out forwards; }
+.hero-content > * { opacity: 0; animation: fadeUp 0.9s var(--ease) forwards; }
+.hero-content > *:nth-child(1) { animation-delay: 0.2s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.4s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.6s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.8s; }
+
+/* ---------- Scroll reveal (class "visible" is added by IntersectionObserver) ---------- */
+html.js .reveal,
+html.js .reveal-left,
+html.js .reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+html.js .reveal       { transform: translateY(34px); }
+html.js .reveal-left  { transform: translateX(-44px); }
+html.js .reveal-right { transform: translateX(44px); }
+
+html.js .reveal.visible,
+html.js .reveal-left.visible,
+html.js .reveal-right.visible { opacity: 1; transform: none; }
+
+/* Stagger delays for items in a grid */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+
+/* Page fade-in on load */
+body { animation: fadeIn 0.5s var(--ease); }
+
+/* ---------- Interactive feedback ---------- */
+.badge.bump { animation: cartBump 0.45s var(--ease); }
+.wishlist-btn.pop i, .wishlist-toggle.pop i { animation: heartPop 0.45s var(--ease); }
+.btn.added { background: var(--success); border-color: var(--success); color: var(--white); }
+.confirm-icon { animation: popIn 0.7s var(--ease) both; }
+.form-group.shake { animation: shake 0.35s var(--ease); }
+.cart-item.removing { animation: removeItem 0.4s var(--ease) forwards; overflow: hidden; }
+.btn.loading { pointer-events: none; opacity: 0.8; }
+.btn.loading::after { content: ""; width: 16px; height: 16px; border: 2px solid currentColor; border-top-color: transparent; border-radius: 50%; animation: spin 0.7s linear infinite; }
+
+/* Fade product cards in when they are rendered by JavaScript */
+.product-card.rendered { animation: fadeUp 0.6s var(--ease) backwards; }
+
+/* ---------- Toast ---------- */
+.toast { animation: toastIn 0.4s var(--ease) both; }
+.toast.hide { animation: toastOut 0.35s var(--ease) forwards; }
+
+/* ---------- Skeleton shimmer ---------- */
+.skeleton::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer 1.4s infinite;
+}
+
+/* ---------- Image fade-in once loaded (class added by common.js) ---------- */
+img.img-loading { opacity: 0; }
+img.img-loaded { opacity: 1; transition: opacity 0.5s var(--ease); }
+
+/* ---------- Accessibility: respect reduced-motion setting ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0s !important;
+  }
+
+  html.js .reveal, html.js .reveal-left, html.js .reveal-right { opacity: 1; transform: none; }
+  .hero-content > * { opacity: 1; }
+  .skeleton::after { display: none; }
+}

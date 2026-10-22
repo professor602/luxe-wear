@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="LuxeWear – premium fashion for men, women and kids. Academic demo store.">
+  <title>LuxeWear – Fashion Store</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="home">
+
+  <!-- Announcement bar + navbar are inserted here by common.js -->
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <!-- ===== Hero ===== -->
+    <section class="hero" aria-label="Featured collections">
+      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=1800&q=80');"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1800&q=80');"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=80');"></div>
+
+      <div class="container">
+        <div class="hero-content">
+          <span class="hero-eyebrow">New Season Collection</span>
+          <h1>Dress with Confidence. Live in Style.</h1>
+          <p>Discover timeless essentials and statement pieces for men, women and kids, crafted with care and designed to last.</p>
+          <div class="hero-buttons">
+            <a href="shop.html" class="btn btn-gold">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+            <a href="women.html" class="btn btn-outline-light">Explore Women</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Feature strip ===== -->
+    <section class="features-strip" aria-label="Store benefits">
+      <div class="container features-grid">
+        <div class="feature-item">
+          <i class="fa-solid fa-truck-fast"></i>
+          <div><h4>Free Shipping</h4><p>On orders over $150</p></div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-rotate-left"></i>
+          <div><h4>Easy Returns</h4><p>30-day return policy</p></div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <div><h4>Quality Promise</h4><p>Carefully selected fabrics</p></div>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-headset"></i>
+          <div><h4>Friendly Support</h4><p>We are here to help</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Shop by category ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Collections</span>
+          <h2>Shop by Category</h2>
+          <p class="section-subtitle">Find the perfect look for everyone in the family.</p>
+        </div>
+
+        <div class="category-grid" data-stagger>
+          <a href="men.html" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&h=1000&q=80" alt="Men's collection" loading="lazy">
+            <div class="category-label"><h3>Men</h3><span>Shop collection</span></div>
+          </a>
+          <a href="women.html" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?auto=format&fit=crop&w=800&h=1000&q=80" alt="Women's collection" loading="lazy">
+            <div class="category-label"><h3>Women</h3><span>Shop collection</span></div>
+          </a>
+          <a href="kids.html" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=800&h=1000&q=80" alt="Kids' collection" loading="lazy">
+            <div class="category-label"><h3>Kids</h3><span>Shop collection</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Featured products ===== -->
+    <section class="section section-cream" id="featured">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Handpicked</span>
+          <h2>Featured Products</h2>
+          <p class="section-subtitle">Our editors' favourites this season.</p>
+        </div>
+        <div class="product-grid" id="featured-grid"></div>
+        <div class="section-footer reveal">
+          <a href="shop.html" class="btn btn-outline">View All Products</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Trending collections ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Trending Now</span>
+          <h2>Trending Collections</h2>
+          <p class="section-subtitle">What everyone is wearing right now.</p>
+        </div>
+
+        <div class="category-grid" data-stagger>
+          <a href="shop.html?type=shoes" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=800&h=1000&q=80" alt="Footwear collection" loading="lazy">
+            <div class="category-label"><h3>Footwear</h3><span>Sneakers &amp; boots</span></div>
+          </a>
+          <a href="shop.html?type=accessories" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=800&h=1000&q=80" alt="Accessories collection" loading="lazy">
+            <div class="category-label"><h3>Accessories</h3><span>Bags, watches &amp; more</span></div>
+          </a>
+          <a href="shop.html?sale=1" class="category-card reveal">
+            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&h=1000&q=80" alt="Sale collection" loading="lazy">
+            <div class="category-label"><h3>The Sale Edit</h3><span>Limited-time prices</span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== New arrivals ===== -->
+    <section class="section section-cream" id="new-arrivals">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Just Landed</span>
+          <h2>New Arrivals</h2>
+          <p class="section-subtitle">Fresh styles added this week.</p>
+        </div>
+        <div class="product-grid" id="new-grid"></div>
+      </div>
+    </section>
+
+    <!-- ===== Promotional offer ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="promo-banner reveal" style="background-image: url('https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1600&q=80');">
+          <span class="section-eyebrow" style="color: var(--gold);">Limited Time Offer</span>
+          <h2>Up to 30% Off Selected Styles</h2>
+          <p>Upgrade your wardrobe with reduced prices on jackets, dresses, sneakers and more while stocks last.</p>
+          <a href="shop.html?sale=1" class="btn btn-gold">Shop the Sale</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Best sellers ===== -->
+    <section class="section section-cream" id="best-sellers">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">Customer Favourites</span>
+          <h2>Best Sellers</h2>
+          <p class="section-subtitle">The pieces our customers love most.</p>
+        </div>
+        <div class="product-grid" id="best-grid"></div>
+        <div class="section-footer reveal">
+          <a href="shop.html?sort=popularity" class="btn btn-primary">Shop Most Popular</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Newsletter ===== -->
+    <section class="section newsletter" id="newsletter">
+      <div class="container reveal">
+        <span class="section-eyebrow">Stay in the Loop</span>
+        <h2>Join the LuxeWear Newsletter</h2>
+        <p class="section-subtitle">Be the first to hear about new arrivals and exclusive offers.</p>
+        <form class="newsletter-form" data-newsletter novalidate>
+          <label for="home-newsletter-email" class="sr-only">Email address</label>
+          <input type="email" id="home-newsletter-email" placeholder="Enter your email address" autocomplete="email">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="newsletter-message" role="status"></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer is inserted here by common.js -->
+  <footer id="site-footer"></footer>
+
+  <!-- Scripts: data -> storage -> shared UI -> page script -> animations -->
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/home.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

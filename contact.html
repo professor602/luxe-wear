@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact LuxeWear. Demo contact form for an academic project.">
+  <title>Contact Us – LuxeWear</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="contact">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> / <span>Contact Us</span>
+        </nav>
+        <h1>Contact Us</h1>
+        <p>We would love to hear from you.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Demo contact details -->
+          <aside class="contact-info reveal-left">
+            <h2>Get in Touch</h2>
+            <p>Questions about an order, a product or anything else? Send us a message.</p>
+
+            <div class="info-item">
+              <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+              <div>
+                <h4>Email</h4>
+                <p>hello@luxewear.example</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i>
+              <div>
+                <h4>Phone</h4>
+                <p>+1 (555) 010-0199</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+              <div>
+                <h4>Address</h4>
+                <p>123 Fashion Avenue, Sample City, 00000</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <i class="fa-regular fa-clock" aria-hidden="true"></i>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Mon &ndash; Sat: 9:00 AM &ndash; 6:00 PM</p>
+              </div>
+            </div>
+
+            <p class="contact-note">These are fictional demo details for an academic project.</p>
+          </aside>
+
+          <!-- Contact form -->
+          <div class="contact-form-box reveal-right">
+            <h2>Send a Message</h2>
+
+            <div class="alert alert-warning" role="note">
+              <strong>Demo only.</strong> Your message is saved in this browser only and is not sent
+              anywhere. Please do not enter sensitive or personal information.
+            </div>
+
+            <div id="contact-alert" class="alert hidden" role="status" aria-live="polite"></div>
+
+            <form id="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-name">Your name</label>
+                  <input type="text" id="contact-name" class="form-control" maxlength="60" autocomplete="name">
+                  <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                  <label for="contact-email">Email address</label>
+                  <input type="email" id="contact-email" class="form-control" placeholder="name@example.com" autocomplete="email">
+                  <span class="form-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Subject</label>
+                <select id="contact-subject" class="form-control">
+                  <option value="">Select a subject</option>
+                  <option>Order question</option>
+                  <option>Product question</option>
+                  <option>Returns &amp; exchanges</option>
+                  <option>Feedback</option>
+                  <option>Other</option>
+                </select>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" class="form-control" rows="5" maxlength="500" placeholder="How can we help?"></textarea>
+                <div class="char-counter" id="char-counter">0 / 500</div>
+                <span class="form-error"></span>
+              </div>
+
+              <button type="submit" class="btn btn-primary" id="contact-submit">Send Message</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/contact.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete your LuxeWear demo order.">
+  <title>Checkout – LuxeWear</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="checkout">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> / <a href="cart.html">Cart</a> / <span>Checkout</span>
+        </nav>
+        <h1>Checkout</h1>
+        <p id="checkout-subtitle">Enter your details to place a demo order.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Shown when the cart is empty -->
+        <div class="empty-state hidden" id="checkout-empty">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <h3>Your cart is empty</h3>
+          <p>Add some products to your cart before checking out.</p>
+          <a href="shop.html" class="btn btn-primary">Start Shopping</a>
+        </div>
+
+        <!-- Hidden until checkout.js confirms login and a non-empty cart -->
+        <div class="checkout-layout hidden" id="checkout-root">
+
+          <form id="checkout-form" class="checkout-form" novalidate>
+
+            <div class="alert alert-warning" role="note">
+              <strong>Demo only.</strong> Please use made-up details. This form does not ask for any
+              payment information, and no real order is created.
+            </div>
+
+            <h3>Contact Information</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-name">Full name</label>
+                <input type="text" id="co-name" class="form-control" maxlength="60" autocomplete="name">
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="co-email">Email address</label>
+                <input type="email" id="co-email" class="form-control" autocomplete="email">
+                <span class="form-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="co-phone">Phone number</label>
+              <input type="tel" id="co-phone" class="form-control" placeholder="e.g. +1 555 010 0000" maxlength="20" autocomplete="tel">
+              <span class="form-error"></span>
+            </div>
+
+            <h3>Shipping Address</h3>
+            <div class="form-group">
+              <label for="co-address">Street address</label>
+              <input type="text" id="co-address" class="form-control" placeholder="Demo address only" maxlength="120" autocomplete="street-address">
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-city">City</label>
+                <input type="text" id="co-city" class="form-control" maxlength="60" autocomplete="address-level2">
+                <span class="form-error"></span>
+              </div>
+              <div class="form-group">
+                <label for="co-postal">Postal code</label>
+                <input type="text" id="co-postal" class="form-control" maxlength="10" autocomplete="postal-code">
+                <span class="form-error"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="co-country">Country</label>
+              <select id="co-country" class="form-control" autocomplete="country-name">
+                <option value="">Select your country</option>
+                <option>Australia</option>
+                <option>Canada</option>
+                <option>Pakistan</option>
+                <option>United Arab Emirates</option>
+                <option>United Kingdom</option>
+                <option>United States</option>
+                <option>Other</option>
+              </select>
+              <span class="form-error"></span>
+            </div>
+
+            <h3>Delivery Notes</h3>
+            <div class="form-group">
+              <label for="co-notes">Notes (optional)</label>
+              <textarea id="co-notes" class="form-control" rows="3" maxlength="200" placeholder="Anything we should know?"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block checkout-submit" id="place-order-btn">Place Demo Order </button>
+          </form>
+
+          <!-- Filled by checkout.js -->
+          <aside class="summary-box" id="checkout-summary" aria-label="Order summary"></aside>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/checkout.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>

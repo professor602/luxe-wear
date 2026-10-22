@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Shop all LuxeWear fashion: clothing, shoes and accessories for men, women and kids.">
+  <title>Shop All – LuxeWear</title>
+
+  <script>document.documentElement.classList.add('js');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body data-page="shop">
+
+  <div id="site-header"></div>
+
+  <main id="main-content">
+
+    <section class="page-banner">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a> / <span>Shop</span>
+        </nav>
+        <h1>Shop All Products</h1>
+        <p>Explore the complete LuxeWear collection.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+
+        <!-- Search and sort -->
+        <div class="shop-toolbar">
+          <div class="shop-search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <label for="shop-search" class="sr-only">Search products by name</label>
+            <input type="search" id="shop-search" placeholder="Search products by name..." autocomplete="off">
+          </div>
+          <div>
+            <label for="shop-sort" class="sr-only">Sort products</label>
+            <select id="shop-sort" class="select-control">
+              <option value="default">Sort: Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="popularity">Most Popular</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Filter chips (filled by shop.js) -->
+        <div class="filter-bar" id="filter-category" style="margin-bottom: 12px;" role="group" aria-label="Filter by category"></div>
+        <div class="filter-bar" id="filter-type" role="group" aria-label="Filter by type"></div>
+
+        <p class="results-count" id="results-count" role="status" aria-live="polite"></p>
+
+        <!-- Product grid (filled by shop.js) -->
+        <div class="product-grid" id="product-grid"></div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="assets/js/products.js"></script>
+  <script src="assets/js/storage.js"></script>
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/shop.js"></script>
+  <script src="assets/js/animations.js"></script>
+</body>
+</html>
